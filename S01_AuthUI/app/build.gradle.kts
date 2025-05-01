@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.s01_authui"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.s01_authui"
