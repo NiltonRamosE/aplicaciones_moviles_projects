@@ -7,7 +7,7 @@
     <View
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:background="@drawable/bubble_egyptian_blue"
+        android:background="@drawable/bubble_aerospace_orange"
         android:layout_gravity="top|start"
         android:translationX="-130dp"
         android:translationY="-120dp" />
@@ -15,7 +15,7 @@
     <View
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:background="@drawable/bubble_egyptian_blue"
+        android:background="@drawable/bubble_chili_red"
         android:layout_gravity="top|start"
         android:translationX="20dp"
         android:translationY="-205dp" />
@@ -23,7 +23,7 @@
     <View
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:background="@drawable/bubble_indigo_dye"
+        android:background="@drawable/bubble_aerospace_orange"
         android:layout_gravity="bottom|end"
         android:translationX="200dp"
         android:translationY="100dp" />
@@ -31,7 +31,7 @@
     <View
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:background="@drawable/bubble_indigo_dye"
+        android:background="@drawable/bubble_chili_red"
         android:layout_gravity="bottom|end"
         android:translationX="0dp"
         android:translationY="205dp" />
@@ -45,7 +45,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/login_title"
+            android:text="@string/register_title"
             android:textStyle="bold"
             android:textSize="30sp"
             android:textColor="@android:color/black"
@@ -55,11 +55,27 @@
             android:layout_gravity="center_horizontal" />
 
         <EditText
+            android:id="@+id/username_et"
+            android:hint="@string/input_username"
+            android:layout_width="375dp"
+            android:layout_height="60dp"
+            android:background="@drawable/input_email"
+            android:inputType="textEmailAddress"
+            android:autofillHints="emailAddress"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:paddingStart="32dp"
+            android:paddingEnd="16dp"
+            android:layout_marginStart="-18dp"
+            android:drawableStart="@drawable/account_icon"
+            android:drawablePadding="25dp"/>
+
+        <EditText
             android:id="@+id/email_et"
             android:hint="@string/input_email"
             android:layout_width="375dp"
             android:layout_height="60dp"
-            android:background="@drawable/input_email"
+            android:background="@drawable/input_email_alt"
             android:inputType="textEmailAddress"
             android:autofillHints="emailAddress"
             android:textColor="#000000"
@@ -91,34 +107,22 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:background="@drawable/button_container_auth"
-            android:src="@drawable/login_arrow_large"
+            android:src="@drawable/register_check"
             android:translationX="165dp"
-            android:translationY="-90dp"
-            android:contentDescription="@string/login_title"/>
+            android:translationY="-120dp"
+            android:contentDescription="@string/register_title"/>
 
-        <TextView
-            android:id="@+id/forgot_password_tv"
-            android:text="@string/forgot_password"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_gravity="end"
-            android:textColor="#666666"
-            android:textStyle="bold"
-            android:gravity="center_vertical"
-            android:translationX="-90dp"
-            android:translationY="-50dp"
-            android:clickable="true"
-            android:focusable="true" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/page_register_btn"
-            android:layout_width="120dp"
+            android:id="@+id/page_login_btn"
+            android:layout_width="125dp"
             android:layout_height="50dp"
-            android:text="@string/register_title"
-            android:layout_marginStart="-145dp"
-            android:textColor="#ff520e"
+            android:text="@string/login_title"
+            android:layout_marginTop="-390dp"
+            android:layout_marginEnd="-142dp"
+            android:textColor="#2f3393"
             android:textAllCaps="false"
-            android:background="@drawable/button_container_register"/>
+            android:background="@drawable/button_container_login"/>
 
     </LinearLayout>
 </FrameLayout>
