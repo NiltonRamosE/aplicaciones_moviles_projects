@@ -1,10 +1,13 @@
 <resources>
     <string name="app_name">S01_AuthUI</string>
+    <string name="home_title">Dashboard Principal</string>
     <string name="login_title">Iniciar Sesión</string>
     <string name="register_title">Registrarse</string>
+    <string name="logout_title">Cerrar Sesión</string>
     <string name="input_username">Usuario</string>
     <string name="input_email">Correo Electrónico</string>
     <string name="input_password">Contraseña</string>
     <string name="forgot_password">¿Olvidate tu contraseña?</string>
+    <string name="welcome_message">Bienvenido %1$s</string>
 
 </resources>

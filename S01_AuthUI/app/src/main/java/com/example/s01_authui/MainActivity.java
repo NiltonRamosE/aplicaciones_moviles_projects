@@ -40,8 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (email.equals(savedEmail) && password.equals(savedPassword)) {
                     Toast.makeText(MainActivity.this, "Login exitoso, bienvenido " + prefs.getString("username", null), Toast.LENGTH_SHORT).show();
-                    // Aquí puedes lanzar otra actividad, por ejemplo:
-                    // startActivity(new Intent(this, HomeActivity.class));
+                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
                 } else {
                     Toast.makeText(MainActivity.this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
                 }
