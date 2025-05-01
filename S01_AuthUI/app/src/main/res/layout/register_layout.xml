@@ -107,7 +107,7 @@
             android:drawablePadding="25dp"/>
 
         <ImageButton
-            android:id="@+id/loginButton"
+            android:id="@+id/register_post_btn"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:background="@drawable/button_container_auth"
