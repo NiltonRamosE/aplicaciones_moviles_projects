@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">S02_UNSFormRegister</string>
+    <string name="background_main">Universidad Nacional del Santa Puerta 01</string>
+    <string name="logo">Logo UNS</string>
+
+    <string name="btn_register_form">Registrar</string>
+    <string name="btn_students_view">Ver Registros</string>
+
 </resources>
