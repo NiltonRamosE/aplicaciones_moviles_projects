@@ -2,21 +2,57 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:padding="16dp"
+    android:background="@drawable/item_background"
+    android:layout_marginBottom="12dp"
+    android:elevation="8dp"
+    android:clickable="true"
+    android:focusable="true">
 
-    <TextView android:id="@+id/item_codigo"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="Código" android:textStyle="bold"/>
+    <!-- Título de Código -->
+    <TextView
+        android:id="@+id/item_codigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Código"
+        android:textSize="16sp"
+        android:textColor="@color/folly"
+        android:layout_marginBottom="4dp"
+        android:textStyle="bold"/>
 
-    <TextView android:id="@+id/item_apellidos"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="Apellidos"/>
+    <!-- Apellidos -->
+    <TextView
+        android:id="@+id/item_apellidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apellidos"
+        android:textSize="16sp"
+        android:textColor="@color/folly"
+        android:layout_marginBottom="4dp"/>
 
-    <TextView android:id="@+id/item_nombres"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="Nombres"/>
+    <!-- Nombres -->
+    <TextView
+        android:id="@+id/item_nombres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombres"
+        android:textSize="16sp"
+        android:textColor="@color/folly"
+        android:layout_marginBottom="4dp"/>
 
-    <TextView android:id="@+id/item_correo"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="Correo"/>
+    <!-- Correo -->
+    <TextView
+        android:id="@+id/item_correo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correo"
+        android:textSize="14sp"
+        android:textColor="@color/folly"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Línea divisoria -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/cardinal"/>
 </LinearLayout>

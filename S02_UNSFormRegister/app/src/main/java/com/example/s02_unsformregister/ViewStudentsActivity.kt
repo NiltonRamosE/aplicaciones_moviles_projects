@@ -1,8 +1,10 @@
 package com.example.s02_unsformregister
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
+import android.widget.Button
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,7 +20,13 @@ class ViewStudentsActivity : AppCompatActivity() {
 
         val recyclerView = findViewById<RecyclerView>(R.id.students_recycler)
         val sortSpinner = findViewById<Spinner>(R.id.sort_spinner)
+        val btnBackHome = findViewById<Button>(R.id.back_button)
 
+        btnBackHome.setOnClickListener{
+            val intent = Intent(this@ViewStudentsActivity, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
         students = StudentStorage.students
 
 
