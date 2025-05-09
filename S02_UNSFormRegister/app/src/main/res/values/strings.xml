@@ -5,5 +5,11 @@
 
     <string name="btn_register_form">Registrar</string>
     <string name="btn_students_view">Ver Registros</string>
+    <string name="back_home_page">Volver al Main Activity</string>
+
+    <string-array name="sort_options">
+        <item>Ordenar por Código</item>
+        <item>Ordenar por Apellidos</item>
+    </string-array>
 
 </resources>
