@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_05"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/flowerTop"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/flower"
+                    android:contentDescription="Flor decorativa"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="30dp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/heartImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/heart"
+                android:contentDescription="Corazón"
+                android:layout_marginTop="32dp" />
+
+            <TextView
+                android:id="@+id/messageText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gracias por tu amor incondicional,\npor cada sacrificio y cada sonrisa.\n¡Feliz Día de la Madre!"
+                android:textAlignment="center"
+                android:textColor="#880E4F"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginTop="24dp" />
+
+            <TextView
+                android:id="@+id/signature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Con cariño, tu hijo Nilton"
+                android:textColor="#6A1B9A"
+                android:textSize="26sp"
+                android:fontFamily="cursive"
+                android:layout_marginTop="16dp" />
+
+            <Button
+                android:id="@+id/btnMensaje"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dale un abrazo virtual"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#F06292"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:layout_marginTop="32dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/heartAnimationLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>
+
