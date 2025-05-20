@@ -24,7 +24,7 @@ class QuestionActivity : AppCompatActivity() {
                 "/res/src/anim",
                 "/res/anim"
             ),
-            "anim"
+            "/res/anim"
         ),
         Question(
             "¿Qué componente de la interfaz nativa de Android se utiliza para mostrar una lista de elementos desplazable?",
