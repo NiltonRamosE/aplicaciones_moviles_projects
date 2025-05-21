@@ -91,13 +91,32 @@ class QuestionActivity : AppCompatActivity() {
 
     private lateinit var questionText: TextView
     private lateinit var optionButtons: List<Button>
+    private lateinit var questionCounter: TextView
+    private lateinit var timerText: TextView
+    private var startTime: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.question_activity)
 
-        //Nombre de usuario obtenido
         username = intent.getStringExtra("USERNAME")
+
+        questionCounter = findViewById(R.id.questionCounter)
+
+        timerText = findViewById(R.id.timerText)
+        startTime = System.currentTimeMillis()
+
+        val timerHandler = android.os.Handler()
+        val timerRunnable = object : Runnable {
+            override fun run() {
+                val elapsedMillis = System.currentTimeMillis() - startTime
+                val seconds = (elapsedMillis / 1000) % 60
+                val minutes = (elapsedMillis / 1000) / 60
+                timerText.text = String.format("%02d:%02d", minutes, seconds)
+                timerHandler.postDelayed(this, 1000)
+            }
+        }
+        timerHandler.post(timerRunnable)
 
         questionText = findViewById(R.id.questionText)
         optionButtons = listOf(
@@ -129,12 +148,15 @@ class QuestionActivity : AppCompatActivity() {
     private fun showQuestion(index: Int) {
         val q = questions[index]
         questionText.text = q.text
+        questionCounter.text = "${index + 1} de ${questions.size}"
+
         optionButtons.forEachIndexed { i, button ->
             button.text = q.options[i]
             button.isEnabled = true
             button.visibility = View.VISIBLE
         }
     }
+
 
     private fun checkAnswer(selectedAnswer: String) {
         val correct = questions[currentIndex].correctAnswer
@@ -151,9 +173,16 @@ class QuestionActivity : AppCompatActivity() {
     }
 
     private fun showResult() {
-        questionText.text = "¡Has terminado, $username!\nPuntaje: $score de ${questions.size}"
+        val totalMillis = System.currentTimeMillis() - startTime
+        val seconds = (totalMillis / 1000) % 60
+        val minutes = (totalMillis / 1000) / 60
+        val finalTime = String.format("%02d:%02d", minutes, seconds)
+
+        questionText.text = "¡Has terminado, $username!\nPuntaje: $score de ${questions.size}\nTiempo: $finalTime"
+
         optionButtons.forEach { it.visibility = View.GONE }
         restartBtn.visibility = View.VISIBLE
     }
+
 
 }
