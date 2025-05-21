@@ -61,6 +61,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/usersRow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -129,82 +130,107 @@
 
     </LinearLayout>
 
-
-    <TextView
-        android:id="@+id/questionText"
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Aquí va la pregunta"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:layout_margin="16dp"
-        app:layout_constraintTop_toBottomOf="@id/elipse_bg"
+        android:layout_height="25dp"
+        android:layout_marginTop="20dp"
+        android:progress="0"
+        android:max="10"
+        android:progressDrawable="@drawable/progress_bar"
+        android:layout_marginHorizontal="40dp"
+        app:layout_constraintTop_toBottomOf="@id/usersRow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
-        android:id="@+id/option1"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/questionsColumn"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Opción A"
-        android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@id/questionText"
+        android:orientation="vertical"
+        android:layout_marginVertical="100dp"
+        android:gravity="center"
+        android:weightSum="5"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"/>
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <Button
-        android:id="@+id/option2"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/questionCard"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Opción B"
-        android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@id/option1"
+        android:layout_height="450dp"
+        android:orientation="vertical"
+        android:layout_marginVertical="40dp"
+        android:layout_marginHorizontal="40dp"
+        android:background="@drawable/card_question_bg"
+        android:padding="24dp"
+        app:layout_constraintTop_toBottomOf="@id/progressBar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"/>
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <Button
-        android:id="@+id/option3"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Opción C"
-        android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@id/option2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/themeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aplicaciones Móviles"
+            android:textColor="#666666"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"/>
 
-    <Button
-        android:id="@+id/option4"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Opción D"
-        android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@id/option3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/questionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aquí va la pregunta"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/option1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Opción A"
+            android:textAllCaps="false"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/option_design"
+            android:textColor="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/option2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Opción B"
+            android:textAllCaps="false"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/option_design"
+            android:textColor="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/option3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Opción C"
+            android:textAllCaps="false"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/option_design"
+            android:textColor="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/option4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Opción D"
+            android:textAllCaps="false"
+            android:background="@drawable/option_design"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/restartBtn"
@@ -214,7 +240,7 @@
         android:layout_marginTop="24dp"
         android:textAllCaps="false"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/option4"
+        app:layout_constraintTop_toBottomOf="@id/questionCard"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

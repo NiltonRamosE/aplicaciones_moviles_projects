@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -94,6 +95,7 @@ class QuestionActivity : AppCompatActivity() {
     private lateinit var questionCounter: TextView
     private lateinit var timerText: TextView
     private var startTime: Long = 0
+    private lateinit var progressBar: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -117,6 +119,11 @@ class QuestionActivity : AppCompatActivity() {
             }
         }
         timerHandler.post(timerRunnable)
+
+        progressBar = findViewById(R.id.progressBar)
+        progressBar.max = questions.size
+        progressBar.progress = 0
+
 
         questionText = findViewById(R.id.questionText)
         optionButtons = listOf(
@@ -149,6 +156,9 @@ class QuestionActivity : AppCompatActivity() {
         val q = questions[index]
         questionText.text = q.text
         questionCounter.text = "${index + 1} de ${questions.size}"
+
+        questionCounter.text = "${index + 1} de ${questions.size}"
+        progressBar.progress = index + 1
 
         optionButtons.forEachIndexed { i, button ->
             button.text = q.options[i]
