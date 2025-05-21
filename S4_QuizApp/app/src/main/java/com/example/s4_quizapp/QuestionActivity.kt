@@ -84,7 +84,6 @@ class QuestionActivity : AppCompatActivity() {
         )
     )
 
-
     private var currentIndex = 0
     private var score = 0
     private lateinit var restartBtn: Button
@@ -123,7 +122,6 @@ class QuestionActivity : AppCompatActivity() {
         progressBar = findViewById(R.id.progressBar)
         progressBar.max = questions.size
         progressBar.progress = 0
-
 
         questionText = findViewById(R.id.questionText)
         optionButtons = listOf(
@@ -166,7 +164,6 @@ class QuestionActivity : AppCompatActivity() {
             button.visibility = View.VISIBLE
         }
     }
-
 
     private fun checkAnswer(selectedAnswer: String) {
         val correctAnswer = questions[currentIndex].correctAnswer
@@ -215,6 +212,4 @@ class QuestionActivity : AppCompatActivity() {
         optionButtons.forEach { it.visibility = View.GONE }
         restartBtn.visibility = View.VISIBLE
     }
-
-
 }
