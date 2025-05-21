@@ -169,18 +169,40 @@ class QuestionActivity : AppCompatActivity() {
 
 
     private fun checkAnswer(selectedAnswer: String) {
-        val correct = questions[currentIndex].correctAnswer
-        if (selectedAnswer == correct) score++
+        val correctAnswer = questions[currentIndex].correctAnswer
 
         optionButtons.forEach { it.isEnabled = false }
 
+        optionButtons.forEach { button ->
+            when {
+                button.text == correctAnswer -> {
+                    button.setBackgroundResource(R.drawable.option_correct)
+                }
+                button.text == selectedAnswer && selectedAnswer != correctAnswer -> {
+                    button.setBackgroundResource(R.drawable.option_incorrect)
+                }
+                else -> {
+                    button.setBackgroundResource(R.drawable.option_design)
+                }
+            }
+        }
+
+        if (selectedAnswer == correctAnswer) score++
+
         currentIndex++
         if (currentIndex < questions.size) {
-            questionText.postDelayed({ showQuestion(currentIndex) }, 1000)
+            questionText.postDelayed({
+                optionButtons.forEach {
+                    it.setBackgroundResource(R.drawable.option_design)
+                    it.isEnabled = true
+                }
+                showQuestion(currentIndex)
+            }, 1500)
         } else {
             showResult()
         }
     }
+
 
     private fun showResult() {
         val totalMillis = System.currentTimeMillis() - startTime

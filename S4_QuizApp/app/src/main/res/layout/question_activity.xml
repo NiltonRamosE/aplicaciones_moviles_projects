@@ -160,7 +160,7 @@
     <LinearLayout
         android:id="@+id/questionCard"
         android:layout_width="0dp"
-        android:layout_height="450dp"
+        android:layout_height="470dp"
         android:orientation="vertical"
         android:layout_marginVertical="40dp"
         android:layout_marginHorizontal="40dp"
@@ -194,43 +194,47 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/option1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:text="Opción A"
             android:textAllCaps="false"
             android:layout_marginBottom="12dp"
+            android:padding="12dp"
             android:background="@drawable/option_design"
             android:textColor="@color/black" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/option2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:text="Opción B"
             android:textAllCaps="false"
             android:layout_marginBottom="12dp"
+            android:padding="12dp"
             android:background="@drawable/option_design"
             android:textColor="@color/black" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/option3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:text="Opción C"
             android:textAllCaps="false"
             android:layout_marginBottom="12dp"
+            android:padding="12dp"
             android:background="@drawable/option_design"
             android:textColor="@color/black" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/option4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:text="Opción D"
             android:textAllCaps="false"
+            android:layout_marginBottom="12dp"
+            android:padding="12dp"
             android:background="@drawable/option_design"
             android:textColor="@color/black" />
     </LinearLayout>
-
 
     <Button
         android:id="@+id/restartBtn"
@@ -243,4 +247,5 @@
         app:layout_constraintTop_toBottomOf="@id/questionCard"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
