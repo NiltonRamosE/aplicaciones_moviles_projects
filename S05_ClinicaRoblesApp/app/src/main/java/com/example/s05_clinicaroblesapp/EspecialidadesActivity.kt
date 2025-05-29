@@ -19,6 +19,7 @@ class EspecialidadesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_especialidades)
 
+        // Configuración del toolbar con botón de retroceso
         val toolbar = findViewById<Toolbar>(R.id.toolbar_especialidades)
         setSupportActionBar(toolbar)
 
@@ -28,6 +29,7 @@ class EspecialidadesActivity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.recyclerEspecialidades)
 
+        // Lista de especialidades con doctores predefinidos
         listaEspecialidades = listOf(
             Especialidad("Pediatría", "Atención médica para niños y adolescentes", R.drawable.pediatria,
                 listOf(
@@ -180,6 +182,7 @@ class EspecialidadesActivity : AppCompatActivity() {
             )
         )
 
+        // Configuración del RecyclerView con adaptador y layout lineal
         adapter = EspecialidadAdapter(listaEspecialidades)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -187,12 +190,14 @@ class EspecialidadesActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        // Inflar el menú de búsqueda
         menuInflater.inflate(R.menu.menu_search, menu)
         val searchItem = menu?.findItem(R.id.action_search_especialidad)
         val searchView = searchItem?.actionView as? SearchView
 
         searchView?.queryHint = "Buscar especialidad..."
 
+        // Manejar búsqueda en tiempo real
         searchView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
