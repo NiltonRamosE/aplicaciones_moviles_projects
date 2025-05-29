@@ -35,14 +35,16 @@
                 android:layout_height="wrap_content"
                 android:text="Pediatría"
                 android:textStyle="bold"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:fontFamily="@font/comfortaa_latin_700_normal"/>
 
             <TextView
                 android:id="@+id/txtDescripcion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Esta es la descripción"
-                android:textColor="#555" />
+                android:textColor="#555"
+                android:fontFamily="@font/comfortaa_latin_300_normal"/>
 
         </LinearLayout>
     </LinearLayout>

@@ -1,6 +1,7 @@
 package com.example.s05_clinicaroblesapp
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,6 +22,9 @@ class DoctoresActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         toolbar.setNavigationOnClickListener { finish() }
+
+        val tvInfo = findViewById<TextView>(R.id.tvInfo)
+        tvInfo.text = "Elige un doctor para ver su horario y especialidad. Actualmente tenemos: ${listaDoctores.size} disponibles"
 
     }
 }

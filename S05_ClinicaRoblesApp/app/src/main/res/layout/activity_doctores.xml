@@ -11,7 +11,7 @@
         android:id="@+id/toolbar_doctores"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/pigment_green"
+        android:background="@color/tea_green"
         android:title="Doctores"
         android:titleTextColor="@android:color/white"
         app:navigationIcon="@drawable/ic_back"
@@ -19,6 +19,73 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardResumen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_doctores"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/imgResumen"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_health"
+                android:contentDescription="Icono resumen"
+                android:layout_marginEnd="16dp" />
+
+            <TextView
+                android:id="@+id/txtResumen"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nuestro equipo está listo para cuidarte con profesionalismo y calidez."
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                android:fontFamily="@font/comfortaa_latin_300_normal"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvTitleDoctor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="DOCTORES DISPONIBLES"
+        android:textColor="@color/black"
+        android:layout_marginTop="15dp"
+        android:textSize="18sp"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/cardResumen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/comfortaa_latin_700_normal"/>
+    <TextView
+        android:id="@+id/tvInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Elige un doctor para ver su horario y especialidad."
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleDoctor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/comfortaa_latin_700_normal"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerDoctores"
@@ -26,7 +93,7 @@
         android:layout_height="0dp"
         android:padding="8dp"
         tools:listitem="@layout/item_doctor"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_doctores"
+        app:layout_constraintTop_toBottomOf="@id/tvInfo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

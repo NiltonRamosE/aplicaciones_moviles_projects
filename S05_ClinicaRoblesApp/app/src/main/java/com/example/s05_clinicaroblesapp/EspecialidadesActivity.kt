@@ -22,6 +22,10 @@ class EspecialidadesActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar_especialidades)
         setSupportActionBar(toolbar)
 
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        toolbar.setNavigationOnClickListener { finish() }
+
         recyclerView = findViewById(R.id.recyclerEspecialidades)
 
         listaEspecialidades = listOf(
