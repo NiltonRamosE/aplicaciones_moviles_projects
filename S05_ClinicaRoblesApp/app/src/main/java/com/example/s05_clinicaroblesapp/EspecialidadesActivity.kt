@@ -1,19 +1,30 @@
 package com.example.s05_clinicaroblesapp
 
 import android.os.Bundle
+import android.util.Log
+import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.widget.SearchView
 
 class EspecialidadesActivity : AppCompatActivity() {
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: EspecialidadAdapter
+    private lateinit var listaEspecialidades: List<Especialidad>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_especialidades)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerEspecialidades)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        val toolbar = findViewById<Toolbar>(R.id.toolbar_especialidades)
+        setSupportActionBar(toolbar)
 
-        val lista = listOf(
+        recyclerView = findViewById(R.id.recyclerEspecialidades)
+
+        listaEspecialidades = listOf(
             Especialidad("Pediatría", "Atención médica para niños y adolescentes", R.drawable.pediatria,
                 listOf(
                     Doctor("Dr. Marcos Vásquez Tantas", "Lun-Vie 8:00 - 13:00"),
@@ -165,7 +176,31 @@ class EspecialidadesActivity : AppCompatActivity() {
             )
         )
 
+        adapter = EspecialidadAdapter(listaEspecialidades)
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
-        recyclerView.adapter = EspecialidadAdapter(lista)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_search, menu)
+        val searchItem = menu?.findItem(R.id.action_search_especialidad)
+        val searchView = searchItem?.actionView as? SearchView
+
+        searchView?.queryHint = "Buscar especialidad..."
+
+        searchView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                Log.d("SEARCH", "Texto buscado: $newText")
+                adapter.filter(newText ?: "")
+                return true
+            }
+        })
+
+        return true
     }
 }

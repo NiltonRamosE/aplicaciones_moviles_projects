@@ -1,6 +1,7 @@
 package com.example.s05_clinicaroblesapp
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,8 +9,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class EspecialidadAdapter(private val lista: List<Especialidad>) :
+class EspecialidadAdapter(private val listaOriginal: List<Especialidad>) :
     RecyclerView.Adapter<EspecialidadAdapter.ViewHolder>() {
+    private var listaFiltrada: MutableList<Especialidad> = listaOriginal.toMutableList()
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imgEspecialidad: ImageView = view.findViewById(R.id.imgEspecialidad)
@@ -23,10 +25,8 @@ class EspecialidadAdapter(private val lista: List<Especialidad>) :
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int = lista.size
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = lista[position]
+        val item = listaFiltrada[position]
         holder.imgEspecialidad.setImageResource(item.imagenResId)
         holder.txtNombre.text = item.nombre
         holder.txtDescripcion.text = item.descripcion
@@ -38,5 +38,18 @@ class EspecialidadAdapter(private val lista: List<Especialidad>) :
             context.startActivity(intent)
         }
 
+    }
+
+    override fun getItemCount(): Int = listaFiltrada.size
+
+    fun filter(text: String) {
+        listaFiltrada = if (text.isEmpty()) {
+            listaOriginal.toMutableList()
+        } else {
+            listaOriginal.filter {
+                it.nombre.contains(text, ignoreCase = true)
+            }.toMutableList()
+        }
+        notifyDataSetChanged()
     }
 }
