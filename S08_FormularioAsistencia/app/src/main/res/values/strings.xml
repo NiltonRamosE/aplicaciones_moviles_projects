@@ -1,47 +1,35 @@
 <resources>
+    <!-- General -->
     <string name="app_name">San Pedrito 2025</string>
+    <string name="current_time">Hora actual: %s</string>
+    <string name="registration_success">Registro exitoso!</string>
 
-    <!-- Formulario -->
-    <string name="form_title">Registro de Asistencia</string>
-    <string name="attendee_type">Tipo de asistente</string>
+    <!-- Buttons -->
     <string name="student">Estudiante</string>
     <string name="teacher">Docente</string>
-    <string name="first_names">Nombres</string>
-    <string name="last_names">Apellidos</string>
-    <string name="institutional_email">Correo institucional</string>
+    <string name="submit">Registrar asistencia</string>
+
+    <!-- Form labels -->
+    <string name="first_name">Nombres</string>
+    <string name="last_name">Apellidos</string>
+    <string name="email">Correo institucional</string>
     <string name="phone">Celular</string>
-    <string name="student_code">Código de matrícula</string>
+    <string name="enrollment_code">Código de matrícula</string>
     <string name="dni">DNI</string>
-    <string name="current_time">Hora actual</string>
     <string name="comments">Comentarios (opcional)</string>
-    <string name="register">Registrar</string>
-    <string name="required_field">Este campo es requerido</string>
-    <string name="invalid_email">Correo electrónico no válido</string>
-    <string name="registration_success">Registro exitoso</string>
+    <string name="attendees_list">Lista de Asistentes</string>
+    <string name="phone_hint">Teléfono: %s</string>
+    <string name="enrollment_hint">Matrícula: %s</string>
+    <string name="dni_hint">DNI: %s</string>
+    <string name="registered_at">Registrado a las: %s</string>
+    <string name="comments_hint">Comentarios: %s</string>
 
-    <!-- Menú -->
-    <string name="menu_event_info">Información del evento</string>
-
-    <!-- Noticias -->
-    <string name="news_title">Noticias del evento</string>
-
-    <!-- Historial -->
-    <string name="history_title">Historial de registros</string>
-    <string name="empty_history">No hay registros aún</string>
-
-    <!-- Información -->
-    <string name="info_title">Información del evento</string>
-    <string name="event_name">Fiesta de San Pedrito 2025</string>
-    <string name="event_date">29 de junio de 2025</string>
-    <string name="event_location">Campus Universitario</string>
-    <string name="event_activities">Actividades programadas</string>
-    <string name="event_contact">Contacto del organizador</string>
-    <string name="event_activities_list">- Inauguración\n- Presentaciones artísticas\n- Juegos tradicionales\n- Premiaciones\n- Clausura</string>
-    <string name="event_contact_info">organizacion@sanpedrito.edu.pe\n+51 987654321</string>
-
-    <!-- Bottom Navigation -->
-    <string name="menu_form">Formulario</string>
-    <string name="menu_news">Noticias</string>
-    <string name="menu_history">Historial</string>
-    <string name="menu_info">Información</string>
+    <string name="dark_mode">Modo Oscuro</string>
+    <string name="light_mode">Modo Claro</string>
+    <string name="terms_and_conditions">Términos y Condiciones</string>
+    <string name="menu">Menú</string>
+    <!-- Errors -->
+    <string name="error_required">Este campo es requerido</string>
+    <string name="error_invalid_email">Correo electrónico no válido</string>
+    <string name="error_invalid_phone">Número de celular no válido</string>
 </resources>
