@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TechPoint</string>
+    <string name="view_map">Ver Mapa de Tiendas</string>
+    <string name="app_logo">Logo de TechPoint</string>
+    <string name="current_location">Mi ubicación actual</string>
+    <string name="my_api_key">TU_API_KEY</string>
+</resources>
