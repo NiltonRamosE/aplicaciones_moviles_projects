@@ -31,12 +31,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private var currentLocation: LatLng? = null
     private val computerStores = listOf(
-        ComputerStore("TecnoShop", LatLng(-9.0745, -78.5936), "Av. Pardo 123"),
-        ComputerStore("PC Express", LatLng(-9.0755, -78.5926), "Av. José Gálvez 456"),
-        ComputerStore("CompuMundo", LatLng(-9.0735, -78.5946), "Calle Manuel Ruiz 789"),
-        ComputerStore("TechCenter", LatLng(-9.0760, -78.5910), "Av. Bolognesi 321"),
-        ComputerStore("Digital House", LatLng(-9.0720, -78.5950), "Jr. Salaverry 654")
-    )
+        ComputerStore("Computer House", LatLng(-9.075935, -78.592241), "Av. Pardo 620, Chimbote 02803"),
+        ComputerStore("Laptos Chimbote", LatLng(-9.074452, -78.591618), "HAPPY PLAZA, Centro Comercial, Jirón Leoncio Prado 603, Chimbote 02803"),
+        ComputerStore("Compusally", LatLng(-9.075363, -78.591855), "Av. Pardo 619, Chimbote 02803"),
+        ComputerStore("AGO Inversiones", LatLng(-9.073096, -78.593163), "Jirón Ladislao Espinar 440, Chimbote 02803"),
+        ComputerStore("TECNO MASTER NEO", LatLng(-9.080629, -78.575861), "Prolongacion Leoncio Prado 2152, Chimbote 02804"),
+        ComputerStore("ZONA GAMER CHIMBOTE", LatLng(-9.084578, -78.565874), "Mz B lote 9-3 Urb estrellas, Chimbote"),
+        ComputerStore("Goody Import", LatLng(-9.093846, -78.561636), "Cesar Vallejo Mz 11, Chimbote 02711"),
+        ComputerStore("TECNOLOGY PARTNER", LatLng(-9.122573, -78.538728), "Las brisas F-4, Nuevo Chimbote 02803"),
+        ComputerStore("TiendadeComputoPeru", LatLng(-9.127831, -78.514389), "Mz. F2 Lote 44, Nuevo Chimbote"),
+        ComputerStore("ComputiendaPeru", LatLng(-9.119891, -78.527589), "Nuevo Chimbote 02711"),
+        )
     private lateinit var storesAdapter: ArrayAdapter<String>
     private var selectedStore: ComputerStore? = null
 
