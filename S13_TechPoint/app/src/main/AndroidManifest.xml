@@ -30,6 +30,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MapsActivity"
+            android:exported="false" />
         <!-- Clave API de Google Maps: necesaria para autenticar y utilizar los servicios de mapas -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"

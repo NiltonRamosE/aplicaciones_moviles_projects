@@ -3,5 +3,6 @@
     <string name="view_map">Ver Mapa de Tiendas</string>
     <string name="app_logo">Logo de TechPoint</string>
     <string name="current_location">Mi ubicación actual</string>
+    <string name="find_nearest_store">Buscar tienda más cercana</string>
     <string name="my_api_key">TU_API_KEY</string>
 </resources>
